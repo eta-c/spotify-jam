@@ -20,7 +20,7 @@ async function endJamSession(sessionId) {
             Authorization: `Bearer ${session.accessToken}`
         }
     };
-    let response = await fetch(`https://spclient.wg.spotify.com/social-connect/v3/sessions/${sessionId}?alt=json`, options)
+    let response = await fetch(`https://spclient.wg.spotify.com/social-connect/v3/sessions/${sessionId}`, options)
 
     if (!response.ok) {
         console.error('Something went wrong... did you even start one?');
