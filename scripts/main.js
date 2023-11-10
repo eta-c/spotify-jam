@@ -130,6 +130,7 @@ async function joinJamSession() {
 
         document.initJam = async () => {
             jamSession = await initJamSession();
+            console.log(jamSession)
             allowJamEnd = true
         }
 
@@ -168,8 +169,8 @@ async function joinJamSession() {
                         if (!context_menu)
                             continue
 
-                        let logoutButton = context_menu.querySelector(`li:nth-child(6)`)
-                        let settingsButton = context_menu.querySelector(`li:nth-child(5)`)
+                        let logoutButton = context_menu.querySelector(`li:nth-child(5)`)
+                        let settingsButton = context_menu.querySelector(`li:nth-child(4)`)
 
                         for (let i = 0; i < buttons.length; i++) {
                             let button = buttons[i]
