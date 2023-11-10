@@ -1,2 +1,2 @@
-# STUBIO-CORE
-Rust-powered Headless Roblox Studio.
+# SPOTIFY-JAM
+Enables collaborative Spotify listening on a desktop built with Rust.
