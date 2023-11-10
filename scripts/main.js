@@ -161,32 +161,36 @@ async function joinJamSession() {
         let callback = function (mutationsList, observer) {
             for (let mutation of mutationsList) {
                 if (mutation.type === 'childList') {
-                    let context_menu = document.querySelector("#context-menu > div > ul");
-                    let profile_button = document.querySelector("#main > div > div.ZQftYELq0aOsg6tPbVbV > div.jEMA2gVoLgPQqAFrPhFw > header > button.Button-sc-1dqy6lx-0.grWQsc.encore-over-media-set.SFgYidQmrqrFEVh65Zrg")
+                    try {
+                        let context_menu = document.querySelector("#context-menu > div > ul");
+                        let profile_button = document.querySelector("#main > div > div.ZQftYELq0aOsg6tPbVbV > div.jEMA2gVoLgPQqAFrPhFw > header > button.Button-sc-1dqy6lx-0.grWQsc.encore-over-media-set.SFgYidQmrqrFEVh65Zrg")
 
-                    if (!context_menu)
-                        continue
-
-                    let logoutButton = context_menu.querySelector(`li:nth-child(6)`)
-                    let settingsButton = context_menu.querySelector(`li:nth-child(5)`)
-
-                    for (let i = 0; i < buttons.length; i++) {
-                        let button = buttons[i]
-
-                        if (button.element != null && context_menu.contains(button.element))
+                        if (!context_menu)
                             continue
 
-                        let elm = (i == buttons.length - 1 ? settingsButton : logoutButton).cloneNode(true);
-                        let span = elm.querySelector('span[data-encore-id="type"]');
-                        span.textContent = button.Name;
+                        let logoutButton = context_menu.querySelector(`li:nth-child(6)`)
+                        let settingsButton = context_menu.querySelector(`li:nth-child(5)`)
+
+                        for (let i = 0; i < buttons.length; i++) {
+                            let button = buttons[i]
+
+                            if (button.element != null && context_menu.contains(button.element))
+                                continue
+
+                            let elm = (i == buttons.length - 1 ? settingsButton : logoutButton).cloneNode(true);
+                            let span = elm.querySelector('span[data-encore-id="type"]');
+                            span.textContent = button.Name;
 
 
-                        button.element = elm;
-                        context_menu.insertBefore(elm, logoutButton);
-                        elm.addEventListener('click', () => {
-                            profile_button.click();
-                            button.event()
-                        })
+                            button.element = elm;
+                            context_menu.insertBefore(elm, logoutButton);
+                            elm.addEventListener('click', () => {
+                                profile_button.click();
+                                button.event()
+                            })
+                        }
+                    } catch (err) {
+                        console.log(err)
                     }
                 }
             }
