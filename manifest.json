@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "Spotify Jam",
+    "version": "0.0.1",
+    "description": "Starts a spotify jam session on desktop",
+    "author": "https://github.com/tykind",
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ],
+    "icons": {
+        "16": "icons/icon-16.jpg",
+        "32": "icons/icon-32.jpg",
+        "48": "icons/icon-48.jpg",
+        "128": "icons/icon-128.jpg"
+    },
+    "background": {
+        "service_worker": "src/worker.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.spotify.com/*"
+            ],
+            "js": [
+                "src/injector.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "scripts/main.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
