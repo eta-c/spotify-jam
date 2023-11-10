@@ -14,10 +14,6 @@
         "48": "icons/icon-48.jpg",
         "128": "icons/icon-128.jpg"
     },
-    "background": {
-        "service_worker": "src/worker.js",
-        "type": "module"
-    },
     "content_scripts": [
         {
             "matches": [
