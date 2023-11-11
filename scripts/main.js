@@ -30,13 +30,17 @@ const localeMessages = {
         "shareJamLink": "Share Jam Link",
         "leaveTheJam": "Leave the Jam",
         "joinAJam": "Join a Jam",
-        "errorAddingButtons": "Error adding buttons to context menu:"
+        "errorAddingButtons": "Error adding buttons to context menu:",
+        "createJamSession": 'Jam session created',
+        "endedJamSession": 'Ended the Jam session',
+        "LeftJam": 'Left the Jam',
+        "JoinedJam": 'Joined the Jam'
     },
     es: {
         "errorGettingJamSession": "Error al obtener la sesión de Jam:",
         "failedToInitializeJamSession": "Error al iniciar una nueva sesión de Jam.",
         "failedToEndJamSession": "Error al terminar la sesión de Jam.",
-        "failedToGenerateShareableUrl": "Error al generar la URL compartible.",
+        "failedToGenerateShareableUrl": "Error al generar el URL compartible.",
         "failedToLeaveJamSession": "Error al salir de la sesión de Jam.",
         "failedToJoinJamSession": "Error al unirse a la sesión de Jam.",
         "copiedToClipboard": "Copiado al portapapeles",
@@ -45,20 +49,24 @@ const localeMessages = {
         "shareJamLink": "Compartir enlace de Jam",
         "leaveTheJam": "Salir de la Jam",
         "joinAJam": "Unirse a una Jam",
-        "enterSessionToken": "Introducir token de sesión",
-        "requestFailed": "La solicitud ha fallado",
-        "failedToParseJSON": "Error al analizar la respuesta como JSON:",
-        "sessionToken": "token de session",
-        "requestFailed": "La solicitud ha fallado:",
+        "enterSessionToken": "Introduce el token de sesión",
+        "requestFailed": "Solicitud fallida",
+        "failedToParseJSON": "Error al interpretar la respuesta como JSON:",
+        "sessionToken": "token de sesión",
+        "requestFailed": "Solicitud fallida:",
         "spotifyJamming": "¡Jamming en Spotify!",
-        "desktopJamUsage": "Permite usar Spotify Jam en el escritorio (Hecho para mi novia)",
+        "desktopJamUsage": "Permite el uso de Spotify Jam en escritorio (Creado para mi novia)",
         "jamSessionNonExistentOrInactive": "La sesión de Jam no existe o no está activa.",
         "startAJam": "Iniciar una Jam",
         "endJam": "Terminar Jam",
         "shareJamLink": "Compartir enlace de Jam",
         "leaveTheJam": "Salir de la Jam",
         "joinAJam": "Unirse a una Jam",
-        "errorAddingButtons": "Error al agregar botones al menú contextual:"
+        "errorAddingButtons": "Error al añadir botones al menú contextual:",
+        "createJamSession": "Sesión de Jam creada",
+        "endedJamSession": "Sesión de Jam terminada",
+        "LeftJam": "Se salió del Jam",
+        "JoinedJam": "Se unió al Jam"
     }
 };
 
@@ -236,6 +244,7 @@ async function leaveJamSession(sessionId) {
         const newJamSession = await initJamSession();
         if (newJamSession) {
             jamSession = newJamSession;
+            alert(getLocalizedMessage('createJamSession'));
         } else {
             console.error(getLocalizedMessage('failedToInitializeJamSession'));
         }
@@ -246,6 +255,7 @@ async function leaveJamSession(sessionId) {
             const result = await endJamSession(jamSession.session_id);
             if (result !== null) {
                 jamSession = null;
+                alert(getLocalizedMessage('endedJamSession'));
             } else {
                 console.error(getLocalizedMessage('failedToEndJamSession'));
             }
@@ -268,6 +278,8 @@ async function leaveJamSession(sessionId) {
         const result = await leaveJamSession(jamSession.session_id);
         if (result === null) {
             console.error(getLocalizedMessage('failedToLeaveJamSession'));
+        } else {
+            alert(getLocalizedMessage('LeftJam'));
         }
     };
 
@@ -277,6 +289,7 @@ async function leaveJamSession(sessionId) {
             const joinedSession = await joinJamSession(jamSessionId);
             if (joinedSession) {
                 jamSession = joinedSession;
+                alert(getLocalizedMessage('LeftJam'));
             } else {
                 console.error(getLocalizedMessage('failedToJoinJamSession'));
             }
