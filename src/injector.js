@@ -14,7 +14,6 @@ function injectScript(config) {
     (document.head || document.documentElement).appendChild(s);
 }
 
-
 injectScript({
     name: 'Spotify Jam',
     src: 'scripts/main.js'

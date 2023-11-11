@@ -8,6 +8,12 @@
         "scripting",
         "activeTab"
     ],
+    "host_permissions": [
+        "*://*.spotify.link/*",
+        "*://*.app.link/*",
+        "https://spotify.app.link/*",
+        "https://*.spotify.com/*"
+    ],
     "icons": {
         "16": "icons/icon-16.jpg",
         "32": "icons/icon-32.jpg",
