@@ -305,6 +305,7 @@ async function leaveJamSession(sessionId) {
         { Name: getLocalizedMessage('leaveTheJam'), event: document.leaveJam },
     ];
 
+    const config = getConfig()
     const targetNode = document.querySelector('body');
     const observer = new MutationObserver((mutationsList) => {
         for (let mutation of mutationsList) {
@@ -316,8 +317,8 @@ async function leaveJamSession(sessionId) {
                     if (!contextMenu)
                         return
 
-                    let logoutButton = contextMenu.querySelector(`li:nth-child(6)`)
-                    let settingsButton = contextMenu.querySelector(`li:nth-child(5)`)
+                    let logoutButton = contextMenu.querySelector(`li:nth-child(${config.userCountry != 'US' ? 4 : 6})`)
+                    let settingsButton = contextMenu.querySelector(`li:nth-child(${config.userCountry != 'US' ? 3 : 5})`)
                     buttons.forEach((button, index) => {
                         if (button.element && contextMenu.contains(button.element)) return;
 
