@@ -256,7 +256,7 @@ async function leaveJamSession(sessionId) {
         if (!jamSession?.session_id) return;
         const urlInfo = await dropUrl();
         if (urlInfo) {
-            navigator.clipboard.writeText(`${getLocalizedMessage('sessionToken')} ${jamSession.join_session_token} || URL: ${urlInfo.shareable_url}`);
+            navigator.clipboard.writeText(`${getLocalizedMessage('sessionToken')}: ${jamSession.join_session_token} || URL: ${urlInfo.shareable_url}`);
             alert(getLocalizedMessage('copiedToClipboard'));
         } else {
             console.error(getLocalizedMessage('failedToGenerateShareableUrl'));
