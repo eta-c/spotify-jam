@@ -15,10 +15,10 @@
         "https://*.spotify.com/*"
     ],
     "icons": {
-        "16": "icons/meow.png",
-        "32": "icons/meow.png",
-        "48": "icons/meow.png",
-        "128": "icons/meow.png"
+        "16": "images/meow.png",
+        "32": "images/meow.png",
+        "48": "images/meow.png",
+        "128": "images/meow.png"
     },
     "content_scripts": [
         {

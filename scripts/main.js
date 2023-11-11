@@ -288,8 +288,8 @@ async function leaveJamSession(sessionId) {
         { Name: getLocalizedMessage('startAJam'), event: document.initJam },
         { Name: getLocalizedMessage('endJam'), event: document.endJam },
         { Name: getLocalizedMessage('shareJamLink'), event: document.shareLink },
+        { Name: getLocalizedMessage('joinAJam'), event: document.joinJam },
         { Name: getLocalizedMessage('leaveTheJam'), event: document.leaveJam },
-        { Name: getLocalizedMessage('joinAJam'), event: document.joinJam }
     ];
 
     const targetNode = document.querySelector('body');
