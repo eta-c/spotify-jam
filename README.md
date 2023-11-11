@@ -1,5 +1,6 @@
 # SPOTIFY-JAM
 This extension enables collaborative Spotify listening on a desktop.
+![meow](https://github.com/eta-c/spotify-jam/blob/main/images/meow.png)
 
 ## Features
 SPOTIFY-JAM introduces a range of functionalities accessible through the context menu on your Spotify profile. These include:
@@ -14,7 +15,7 @@ SPOTIFY-JAM introduces a range of functionalities accessible through the context
 
 1. **Accessing New Features**: Upon installing the extension, new buttons will be added to the context menu of your Spotify profile.
 
-   ![Context Menu](https://github.com/eta-c/spotify-jam/assets/106443697/d52f94e9-d6b8-4b5a-b126-2df5c10263cb)
+   ![Context Menu](https://github.com/eta-c/spotify-jam/blob/main/images/chrome_1i53VveffK.png)
 
 2. **Joining a Session**: You'll need a session token to join a Jam, which can be obtained via the **Share Jam Link** feature. If accessing a Jam session via a direct link, you can paste the link onto a browser and get the other link before it fully redirects. Once you get this other link, you can extract the session token from the URL:
 
@@ -22,7 +23,7 @@ SPOTIFY-JAM introduces a range of functionalities accessible through the context
 
    Enter this token in the Join a Jam dialog to connect to the session.
 
-![Join Session Dialog](https://github.com/eta-c/spotify-jam/assets/106443697/3f78d4bb-3091-45a7-97d7-99a7a3fbb436)
+![Join Session Dialog](https://github.com/eta-c/spotify-jam/blob/main/images/chrome_nAMPp13ot9.png)
 
 
 *I made this primarily for my girlfriend 🥰 💫*
