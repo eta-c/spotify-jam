@@ -289,7 +289,7 @@ async function leaveJamSession(sessionId) {
             const joinedSession = await joinJamSession(jamSessionId);
             if (joinedSession) {
                 jamSession = joinedSession;
-                alert(getLocalizedMessage('LeftJam'));
+                alert(getLocalizedMessage('JoinedJam'));
             } else {
                 console.error(getLocalizedMessage('failedToJoinJamSession'));
             }
