@@ -18,7 +18,6 @@ const localeMessages = {
         "leaveTheJam": "Leave the Jam",
         "joinAJam": "Join a Jam",
         "enterSessionToken": "Enter sessionToken",
-        "requestFailed": "Request failed",
         "failedToParseJSON": "Failed to parse response as JSON:",
         "sessionToken": "sessionToken",
         "requestFailed": "Request failed:",
@@ -50,7 +49,6 @@ const localeMessages = {
         "leaveTheJam": "Salir de la Jam",
         "joinAJam": "Unirse a una Jam",
         "enterSessionToken": "Introduce el token de sesión",
-        "requestFailed": "Solicitud fallida",
         "failedToParseJSON": "Error al interpretar la respuesta como JSON:",
         "sessionToken": "token de sesión",
         "requestFailed": "Solicitud fallida:",
@@ -106,7 +104,7 @@ async function spotifyFetch(config) {
     const response = await fetch(endpoint, { method, headers, body: body ? JSON.stringify(body) : undefined });
 
     if (response.status !== 200 && response.status !== 201) {
-        console.error(`${getLocalizedMessage(requestFailed)} ${response.status} - ${response.statusText}`);
+        console.error(`${getLocalizedMessage('requestFailed')} ${response.status} - ${response.statusText}`);
         return;
     }
 
