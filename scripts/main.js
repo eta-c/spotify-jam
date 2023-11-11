@@ -163,7 +163,7 @@ async function dropUrl() {
         ],
         link_preview: {
             title: getLocalizedMessage('spotifyJamming'),
-            image_url: "https://shareables.scdn.co/publish/socialsession/...",
+            image_url: "https://shareables.scdn.co/publish/socialsession/3MRiUV7FXcxp2CotBWiiQfSwoomTU2ojnMESH7INqovWZE53KjGpD0Wb1Tl8Gov4HOszHnXilwu8WdVvMCrFysbaLXHm9cMryBFt3iv1lJIM",
             description: getLocalizedMessage('desktopJamUsage')
         },
         utm_parameters: {
